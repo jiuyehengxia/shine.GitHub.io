@@ -1,0 +1,2 @@
+(this["webpackJsonpshine-web"]=this["webpackJsonpshine-web"]||[]).push([[0],{9:function(e,n,s){"use strict";s.r(n);s(1);var t=s(3),c=s.n(t),i=s(0);var r=function(){return Object(i.jsx)("div",{className:"App",children:"something else"})};c.a.render(Object(i.jsx)(r,{}),document.getElementById("root"))}},[[9,1,2]]]);
+//# sourceMappingURL=main.bcd742a6.chunk.js.map
