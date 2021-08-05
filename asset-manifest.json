@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "./static/js/main.ece43edd.chunk.js",
-    "main.js.map": "./static/js/main.ece43edd.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.4a4d6372.js",
-    "runtime-main.js.map": "./static/js/runtime-main.4a4d6372.js.map",
-    "static/js/2.55a81797.chunk.js": "./static/js/2.55a81797.chunk.js",
-    "static/js/2.55a81797.chunk.js.map": "./static/js/2.55a81797.chunk.js.map",
-    "index.html": "./index.html",
-    "static/js/2.55a81797.chunk.js.LICENSE.txt": "./static/js/2.55a81797.chunk.js.LICENSE.txt"
+    "main.js": "/shine.GitHub.io/static/js/main.ece43edd.chunk.js",
+    "main.js.map": "/shine.GitHub.io/static/js/main.ece43edd.chunk.js.map",
+    "runtime-main.js": "/shine.GitHub.io/static/js/runtime-main.57d18c85.js",
+    "runtime-main.js.map": "/shine.GitHub.io/static/js/runtime-main.57d18c85.js.map",
+    "static/js/2.55a81797.chunk.js": "/shine.GitHub.io/static/js/2.55a81797.chunk.js",
+    "static/js/2.55a81797.chunk.js.map": "/shine.GitHub.io/static/js/2.55a81797.chunk.js.map",
+    "index.html": "/shine.GitHub.io/index.html",
+    "static/js/2.55a81797.chunk.js.LICENSE.txt": "/shine.GitHub.io/static/js/2.55a81797.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4a4d6372.js",
+    "static/js/runtime-main.57d18c85.js",
     "static/js/2.55a81797.chunk.js",
     "static/js/main.ece43edd.chunk.js"
   ]
