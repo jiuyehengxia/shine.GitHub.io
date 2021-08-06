@@ -39,3 +39,11 @@ export const generateColorString = () => {
 
 export const getStarRate = (): number =>
   Number(generateValueBetween(0.08, 0.2).toFixed(2));
+
+export const judgeIsMobile = (value: string): boolean => {
+  return (
+    value.indexOf("iphone") > -1 ||
+    value.indexOf("android") > -1 ||
+    value.indexOf("ipad") > -1
+  );
+};

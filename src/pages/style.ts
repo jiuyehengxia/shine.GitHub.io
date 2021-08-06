@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SingleOuterWrapperType, CommonStarType } from "../pages/type";
+import { CommonStarType } from "../pages/type";
 
 export const PagesOuterWrapper = styled.div`
   width: 100%;

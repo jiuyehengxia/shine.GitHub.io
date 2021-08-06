@@ -6,19 +6,20 @@
  */
 
 import React, { useState, useEffect } from "react";
-import SingleStar from "../../components/SingleStar";
-import { viewWidth } from "../constants";
+import SingleStar from "./SingleStar";
+import { viewWidth } from "../pages/constants";
 import {
   generatePosByWidth,
   generateNewValue,
   generateColorString,
   getStarRate,
   generateValueBetween,
-} from "../utils";
-import { StarsMetaPropsType, SingleOuterWrapperType } from "../type";
+} from "../pages/utils";
+import { StarsMetaPropsType, SingleOuterWrapperType } from "../pages/type";
 
 function generateStarsMeta(widthValue: number): SingleOuterWrapperType[] {
-  const newArr = new Array(3).fill({});
+
+  const newArr = new Array(10).fill({});
 
   return newArr.map(() => {
     return {

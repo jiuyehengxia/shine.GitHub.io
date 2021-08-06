@@ -6,7 +6,9 @@
  */
 
 import React, { useState } from "react";
-import Header from "./head";
+import PCHome from "./pc";
+import MobileHome from "./mobile";
+import { judgeIsMobile } from "./utils";
 import { PagesOuterWrapper } from "./style";
 
 export default (props: any) => {
@@ -14,9 +16,12 @@ export default (props: any) => {
 
   const [] = useState();
 
+  const isMobile = judgeIsMobile(window.navigator.userAgent.toLowerCase());
+
   return (
     <PagesOuterWrapper>
-      <Header />
+      {isMobile ? <MobileHome /> : <PCHome />}
+      content
     </PagesOuterWrapper>
   );
 };

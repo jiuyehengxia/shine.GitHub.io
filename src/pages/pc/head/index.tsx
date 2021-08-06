@@ -6,8 +6,8 @@
  */
 
 import React, { useState } from "react";
-import StarsMeta from "./StarsMeta";
-import { HeaderOuterWrapper } from "../style";
+import StarsMeta from "../../../components/StarsMeta";
+import { HeaderOuterWrapper } from "../../style";
 
 export default (props: any) => {
   const {} = props;
