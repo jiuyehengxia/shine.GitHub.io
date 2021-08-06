@@ -17,7 +17,7 @@ import {
 import { StarsMetaPropsType, SingleOuterWrapperType } from "../type";
 
 function generateStarsMeta(widthValue: number): SingleOuterWrapperType[] {
-  const newArr = new Array(1).fill({});
+  const newArr = new Array(10).fill({});
 
   return newArr.map(() => {
     return {

@@ -18,7 +18,13 @@ export const generateValueBetween = (
 };
 
 const getSixteenValue = () => {
-  return generateValueBetween(0, 188).toString(16);
+  const resValue = generateValueBetween(0, 188);
+
+  if (resValue <= 16) {
+    return `0${resValue.toString(16)}`;
+  }
+
+  return resValue.toString(16);
 };
 export const generateColorString = () => {
   const redValue = getSixteenValue();

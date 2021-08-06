@@ -32,13 +32,13 @@ export default (props: SingleStarPropsType) => {
   useEffect(() => {
     const dropTimer = setInterval(() => {
       setPosY((oldPosY) => {
-        if (oldPosY + 1 >= viewHeight) {
+        if (oldPosY >= viewHeight) {
           reInitStateExcludeHeight();
 
           return generateNewValue();
         }
 
-        return oldPosY + 20;
+        return getNewPosition(oldPosY);
       });
     }, 200);
 
@@ -51,6 +51,15 @@ export default (props: SingleStarPropsType) => {
     setPosX(generatePosByWidth(viewWidth));
     setBgColor(generateColorString());
     setRate(getStarRate());
+  };
+  const getNewPosition = (posValue: number): number => {
+    if (posValue <= 10) {
+      return posValue + 1;
+    }
+
+    const posRate = posValue / viewHeight;
+
+    return posValue + Math.pow(1 + posRate * 5, 3);
   };
 
   return (
