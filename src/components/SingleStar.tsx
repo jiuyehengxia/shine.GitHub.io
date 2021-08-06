@@ -10,8 +10,8 @@ import { viewWidth, viewHeight } from "../pages/constants";
 import {
   generatePosByWidth,
   generateNewValue,
-  generateValueBetween,
   generateColorString,
+  getStarRate,
 } from "../pages/utils";
 import { SingleStar } from "../pages/style";
 import { SingleStarPropsType } from "../pages/type";
@@ -50,7 +50,7 @@ export default (props: SingleStarPropsType) => {
   const reInitStateExcludeHeight = () => {
     setPosX(generatePosByWidth(viewWidth));
     setBgColor(generateColorString());
-    setRate(generateValueBetween(0.3, 1));
+    setRate(getStarRate());
   };
 
   return (

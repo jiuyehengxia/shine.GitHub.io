@@ -7,7 +7,15 @@ export const generateNewValue = (basicVlaue: number = -50): number =>
 export const generateValueBetween = (
   smallVlaue: number,
   largeValue: number
-): number => Math.floor(Math.random() * (largeValue - smallVlaue)) + smallVlaue;
+): number => {
+  const diff = largeValue - smallVlaue;
+
+  if (diff <= 1) {
+    return Math.floor(Math.random() * diff * 100) / 100 + smallVlaue;
+  }
+
+  return Math.floor(Math.random() * diff) + smallVlaue;
+};
 
 const getSixteenValue = () => {
   return generateValueBetween(0, 188).toString(16);
@@ -19,3 +27,6 @@ export const generateColorString = () => {
 
   return `#${redValue}${greenValue}${blueValue}`;
 };
+
+export const getStarRate = (): number =>
+  Number(generateValueBetween(0.08, 0.25).toFixed(2));
