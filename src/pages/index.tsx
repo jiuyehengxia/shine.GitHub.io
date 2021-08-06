@@ -21,7 +21,6 @@ export default (props: any) => {
   return (
     <PagesOuterWrapper>
       {isMobile ? <MobileHome /> : <PCHome />}
-      content
     </PagesOuterWrapper>
   );
 };
