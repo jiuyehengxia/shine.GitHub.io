@@ -18,9 +18,9 @@ export const generateValueBetween = (
 };
 
 const getSixteenValue = () => {
-  const resValue = generateValueBetween(0, 188);
+  const resValue = generateValueBetween(0, 255);
 
-  if (resValue <= 16) {
+  if (resValue <= 16 && resValue !== 10) {
     return `0${resValue.toString(16)}`;
   }
 
@@ -35,4 +35,4 @@ export const generateColorString = () => {
 };
 
 export const getStarRate = (): number =>
-  Number(generateValueBetween(0.08, 0.25).toFixed(2));
+  Number(generateValueBetween(0.08, 0.2).toFixed(2));

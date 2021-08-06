@@ -5,13 +5,14 @@
  *
  */
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { viewWidth, viewHeight } from "../pages/constants";
 import {
   generatePosByWidth,
   generateNewValue,
   generateColorString,
   getStarRate,
+  generateValueBetween,
 } from "../pages/utils";
 import { SingleStar } from "../pages/style";
 import { SingleStarPropsType } from "../pages/type";
@@ -27,19 +28,17 @@ export default (props: SingleStarPropsType) => {
   const [posX, setPosX] = useState(defaultPosX);
   const [posY, setPosY] = useState(defaultPosY);
   const [rate, setRate] = useState(defalutRate);
-  const [bgColor, setBgColor] = useState(defaultBgColor);
+  const [bgColor, setBgColor] = useState(`${defaultBgColor}00`);
+
+  const dropFlagRef = useRef(0);
 
   useEffect(() => {
     const dropTimer = setInterval(() => {
-      setPosY((oldPosY) => {
-        if (oldPosY >= viewHeight) {
-          reInitStateExcludeHeight();
+      if (dropFlagRef.current < 100) {
+        dropFlagRef.current = dropFlagRef.current + generateValueBetween(2, 4);
+      }
 
-          return generateNewValue();
-        }
-
-        return getNewPosition(oldPosY);
-      });
+      changeVerticalPos();
     }, 200);
 
     return () => {
@@ -47,9 +46,31 @@ export default (props: SingleStarPropsType) => {
     };
   }, []);
 
+  const changeVerticalPos = () => {
+    setPosY((oldPosY) => {
+      if (oldPosY >= viewHeight) {
+        dropFlagRef.current = 0;
+        reInitStateExcludeHeight();
+
+        return generateNewValue();
+      }
+
+      if (dropFlagRef.current >= 100) {
+        return getNewPosition(oldPosY);
+      }
+
+      const opacityValue =
+        dropFlagRef.current < 10
+          ? `0${dropFlagRef.current}`
+          : dropFlagRef.current;
+
+      setBgColor(`${defaultBgColor}${opacityValue}`);
+      return oldPosY;
+    });
+  };
   const reInitStateExcludeHeight = () => {
     setPosX(generatePosByWidth(viewWidth));
-    setBgColor(generateColorString());
+    setBgColor(`${generateColorString()}00`);
     setRate(getStarRate());
   };
   const getNewPosition = (posValue: number): number => {
