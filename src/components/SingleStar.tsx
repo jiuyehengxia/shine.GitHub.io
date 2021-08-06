@@ -12,7 +12,7 @@ import {
   generateNewValue,
   generateColorString,
   getStarRate,
-  generateValueBetween,
+  changeTenToSixteen,
 } from "../pages/utils";
 import { SingleStar } from "../pages/style";
 import { SingleStarPropsType } from "../pages/type";
@@ -22,6 +22,7 @@ export default (props: SingleStarPropsType) => {
     posX: defaultPosX = 0,
     posY: defaultPosY = 0,
     rate: defalutRate = 1,
+    displaySpeed = 2,
     bgColor: defaultBgColor = "#eee",
   } = props;
 
@@ -34,8 +35,8 @@ export default (props: SingleStarPropsType) => {
 
   useEffect(() => {
     const dropTimer = setInterval(() => {
-      if (dropFlagRef.current < 100) {
-        dropFlagRef.current = dropFlagRef.current + generateValueBetween(2, 4);
+      if (dropFlagRef.current <= 255) {
+        dropFlagRef.current = dropFlagRef.current + displaySpeed;
       }
 
       changeVerticalPos();
@@ -52,17 +53,14 @@ export default (props: SingleStarPropsType) => {
         dropFlagRef.current = 0;
         reInitStateExcludeHeight();
 
-        return generateNewValue();
+        return generateNewValue(30);
       }
 
-      if (dropFlagRef.current >= 100) {
+      if (dropFlagRef.current >= 255) {
         return getNewPosition(oldPosY);
       }
 
-      const opacityValue =
-        dropFlagRef.current < 10
-          ? `0${dropFlagRef.current}`
-          : dropFlagRef.current;
+      const opacityValue = changeTenToSixteen(dropFlagRef.current);
 
       setBgColor(`${defaultBgColor}${opacityValue}`);
       return oldPosY;

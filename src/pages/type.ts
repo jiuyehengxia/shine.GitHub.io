@@ -3,6 +3,7 @@ export type CommonStarType = {
   posX?: number;
   posY?: number;
   bgColor?: string;
+  displaySpeed?: number;
 };
 
 export interface SingleOuterWrapperType extends CommonStarType {}

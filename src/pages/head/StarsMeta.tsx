@@ -13,11 +13,12 @@ import {
   generateNewValue,
   generateColorString,
   getStarRate,
+  generateValueBetween,
 } from "../utils";
 import { StarsMetaPropsType, SingleOuterWrapperType } from "../type";
 
 function generateStarsMeta(widthValue: number): SingleOuterWrapperType[] {
-  const newArr = new Array(1).fill({});
+  const newArr = new Array(3).fill({});
 
   return newArr.map(() => {
     return {
@@ -25,6 +26,7 @@ function generateStarsMeta(widthValue: number): SingleOuterWrapperType[] {
       posX: generatePosByWidth(widthValue),
       posY: generateNewValue(30),
       bgColor: generateColorString(),
+      displaySpeed: generateValueBetween(2, 30),
     };
   });
 }
@@ -42,7 +44,13 @@ export default (props: StarsMetaPropsType) => {
 
   const getStars = (data: SingleOuterWrapperType[]) => {
     return data?.map((item: SingleOuterWrapperType) => {
-      const { posX = 0, posY = 0, rate = 1, bgColor = "#eee" } = item;
+      const {
+        posX = 0,
+        posY = 0,
+        rate = 1,
+        bgColor = "#eee",
+        displaySpeed = 2,
+      } = item;
 
       return (
         <SingleStar
@@ -50,6 +58,7 @@ export default (props: StarsMetaPropsType) => {
           posX={posX}
           posY={posY}
           rate={rate}
+          displaySpeed={displaySpeed}
           bgColor={bgColor}
         />
       );
