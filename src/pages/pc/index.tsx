@@ -7,6 +7,7 @@
 
 import React, { useState } from "react";
 import Header from "./head";
+import StarsMeta from "../../components/StarsMeta";
 import { PagesOuterWrapper } from "../style";
 
 export default (props: any) => {
@@ -16,6 +17,7 @@ export default (props: any) => {
 
   return (
     <PagesOuterWrapper>
+      <StarsMeta />
       <Header />
     </PagesOuterWrapper>
   );

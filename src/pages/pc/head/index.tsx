@@ -6,8 +6,13 @@
  */
 
 import React, { useState } from "react";
-import StarsMeta from "../../../components/StarsMeta";
-import { HeaderOuterWrapper } from "../../style";
+import {
+  HeaderOuterWrapper,
+  HeaderInner,
+  HeaderLogoWrapper,
+  HeaderNav,
+  NavItem,
+} from "../../style";
 
 export default (props: any) => {
   const {} = props;
@@ -16,7 +21,15 @@ export default (props: any) => {
 
   return (
     <HeaderOuterWrapper>
-      <StarsMeta />
+      <HeaderInner>
+        <HeaderLogoWrapper />
+        <HeaderNav>
+          <NavItem>导航一</NavItem>
+          <NavItem>导航二</NavItem>
+          <NavItem>导航三</NavItem>
+          <NavItem>导航四</NavItem>
+        </HeaderNav>
+      </HeaderInner>
     </HeaderOuterWrapper>
   );
 };

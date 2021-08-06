@@ -9,7 +9,42 @@ export const PagesOuterWrapper = styled.div`
 
 export const HeaderOuterWrapper = styled.div`
   width: 100%;
+  padding: 0 200px;
   height: 80px;
+  border-bottom: 1px solid #eee;
+`;
+
+export const HeaderInner = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+export const HeaderLogoWrapper = styled.div`
+  width: 200px;
+  min-width: 200px;
+  height: 100%;
+  border: 1px solid #888;
+`;
+export const HeaderNav = styled.div`
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const NavItem = styled.div`
+  width: 90px;
+  height: 35px;
+  color: #333;
+  font-size: 16px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border-radius: 4px;
+  user-select: none;
+  &:hover {
+    color: #fff;
+    background-color: #ccc;
+  }
 `;
 
 const getMainStyle = (props: CommonStarType) => {
