@@ -65,5 +65,7 @@ export default (props: StarsMetaPropsType) => {
     });
   };
 
+  return null;
+
   return <div>{getStars(starsMeta)}</div>;
 };

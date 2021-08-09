@@ -7,6 +7,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Header from "../../../components/Header";
 import { HOMEPAGE } from "../../constants";
 import { DetailPropsType } from "../../type";
 
@@ -23,6 +24,7 @@ export default (props: DetailPropsType) => {
 
   return (
     <div>
+      <Header />
       detail id: {id}
       <Link to={HOMEPAGE}>返回首页</Link>
     </div>

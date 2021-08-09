@@ -7,14 +7,14 @@
 
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
-import { ACUPUNCTURE } from "../../constants";
+import { ACUPUNCTURE } from "../pages/constants";
 import {
   HeaderOuterWrapper,
   HeaderInner,
   HeaderLogoWrapper,
   HeaderNav,
   NavItem,
-} from "../../style";
+} from "../pages/style";
 
 const navData = [
   { title: "导航一", url: "www.baidu.com" },

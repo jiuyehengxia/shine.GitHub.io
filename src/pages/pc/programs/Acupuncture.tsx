@@ -7,6 +7,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Header from "../../../components/Header";
 import { HOMEPAGE } from "../../constants";
 
 export default (props: any) => {
@@ -17,8 +18,9 @@ export default (props: any) => {
   useEffect(() => {}, []);
 
   return (
-    <div>
+    <>
+      <Header />
       Acupuncture<Link to={HOMEPAGE}>返回首页</Link>
-    </div>
+    </>
   );
 };

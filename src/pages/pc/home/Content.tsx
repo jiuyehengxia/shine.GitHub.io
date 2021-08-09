@@ -43,7 +43,12 @@ const Content = (props: ContentPropsType) => {
     });
   };
 
-  return <div>{getContent(mockData)}</div>;
+  return (
+    <div>
+      <p>这是home</p>
+      {getContent(mockData)}
+    </div>
+  );
 };
 
 export default withRouter(Content);
