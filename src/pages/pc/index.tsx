@@ -6,8 +6,12 @@
  */
 
 import React, { useState } from "react";
-import Header from "./head";
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./home";
+import Detail from "./detail";
 import StarsMeta from "../../components/StarsMeta";
+import Acupuncture from "./programs";
+import { HOMEPAGE, ACUPUNCTURE, DETAILPAGE } from "../constants";
 import { PagesOuterWrapper } from "../style";
 
 export default (props: any) => {
@@ -18,7 +22,11 @@ export default (props: any) => {
   return (
     <PagesOuterWrapper>
       <StarsMeta />
-      <Header />
+      <BrowserRouter>
+        <Route path={HOMEPAGE} exact component={Home} />
+        <Route path={DETAILPAGE} component={Detail} />
+        <Route path={ACUPUNCTURE} component={Acupuncture} />
+      </BrowserRouter>
     </PagesOuterWrapper>
   );
 };

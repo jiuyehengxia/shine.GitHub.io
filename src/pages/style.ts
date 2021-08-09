@@ -47,6 +47,10 @@ export const NavItem = styled.div`
   }
 `;
 
+export const ContentItemWrappper = styled.div`
+  height: 40px;
+`;
+
 const getMainStyle = (props: CommonStarType) => {
   const { posX = 0, posY = 0, rate = 1, bgColor = "#f9f9f9" } = props;
 

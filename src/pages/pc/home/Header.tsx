@@ -5,7 +5,9 @@
  *
  */
 
-import React, { useState } from "react";
+import React from "react";
+import { withRouter, Link } from "react-router-dom";
+import { ACUPUNCTURE } from "../../constants";
 import {
   HeaderOuterWrapper,
   HeaderInner,
@@ -21,20 +23,18 @@ const navData = [
   { title: "导航四", url: "www.baiddfasdfu.com" },
 ];
 
-export default (props: any) => {
+const HomeHeader = (props: any) => {
   const {} = props;
-
-  const [] = useState();
-
-  const skipToTarget = (url: string) => {
-    console.log("url__", url);
-  };
 
   const getNavItem = (data: { title: string; url: string }[]) => {
     return data?.map((item) => {
       const { title = "", url = "" } = item;
 
-      return <NavItem onClick={() => skipToTarget(url)}>{title}</NavItem>;
+      return (
+        <Link to={ACUPUNCTURE}>
+          <NavItem>{title}</NavItem>;
+        </Link>
+      );
     });
   };
 
@@ -47,3 +47,5 @@ export default (props: any) => {
     </HeaderOuterWrapper>
   );
 };
+
+export default withRouter(HomeHeader);
