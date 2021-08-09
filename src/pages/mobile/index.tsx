@@ -7,6 +7,8 @@
 
 import React, { useState, useEffect } from "react";
 import Head from "./head";
+import StarsMeta from "../../components/StarsMeta";
+import { OuterWrapper } from "./style";
 
 export default (props: any) => {
   const {} = props;
@@ -16,8 +18,9 @@ export default (props: any) => {
   useEffect(() => {}, []);
 
   return (
-    <>
+    <OuterWrapper>
+      <StarsMeta />
       <Head />
-    </>
+    </OuterWrapper>
   );
 };

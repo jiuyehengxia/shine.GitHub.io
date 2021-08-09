@@ -6,7 +6,6 @@
  */
 
 import React, { useState, useEffect } from "react";
-import StarsMeta from "../../../components/StarsMeta";
 import { HeaderOuterWrapper } from "../../style";
 
 export default (props: any) => {
@@ -16,9 +15,5 @@ export default (props: any) => {
 
   useEffect(() => {}, []);
 
-  return (
-    <HeaderOuterWrapper>
-      <StarsMeta />
-    </HeaderOuterWrapper>
-  );
+  return <HeaderOuterWrapper>comming soon</HeaderOuterWrapper>;
 };
