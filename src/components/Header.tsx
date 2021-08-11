@@ -7,13 +7,15 @@
 
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
-import { ACUPUNCTURE } from "../pages/constants";
+import { ACUPUNCTURE, HOMEPAGE } from "../pages/constants";
 import {
   HeaderOuterWrapper,
   HeaderInner,
   HeaderLogoWrapper,
   HeaderNav,
   NavItem,
+  HeaderLogo,
+  HeaderSlogan,
 } from "../pages/style";
 
 const navData = [
@@ -26,13 +28,19 @@ const navData = [
 const HomeHeader = (props: any) => {
   const {} = props;
 
+  const handleLogoClick = () => {
+    const { history } = props;
+
+    history.push(HOMEPAGE);
+  };
+
   const getNavItem = (data: { title: string; url: string }[]) => {
     return data?.map((item) => {
       const { title = "", url = "" } = item;
 
       return (
         <Link to={ACUPUNCTURE}>
-          <NavItem>{title}</NavItem>;
+          <NavItem>{title}</NavItem>
         </Link>
       );
     });
@@ -41,7 +49,10 @@ const HomeHeader = (props: any) => {
   return (
     <HeaderOuterWrapper>
       <HeaderInner>
-        <HeaderLogoWrapper />
+        <HeaderLogoWrapper>
+          <HeaderLogo onClick={handleLogoClick}>这里是logo</HeaderLogo>
+          <HeaderSlogan>健康快乐每一天</HeaderSlogan>
+        </HeaderLogoWrapper>
         <HeaderNav>{getNavItem(navData)}</HeaderNav>
       </HeaderInner>
     </HeaderOuterWrapper>

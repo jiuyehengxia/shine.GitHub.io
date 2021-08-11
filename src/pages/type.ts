@@ -13,10 +13,10 @@ export interface SingleOuterWrapperType extends CommonStarType {}
 export interface SingleStarPropsType extends CommonStarType {}
 export interface StarsMetaPropsType {}
 
-export interface HomePropsType {}
-export interface ContentPropsType {
+export interface CommonHistoryType {
   history: H.History;
 }
+export interface HomePropsType {}
 export interface DetailPropsType {
   match: {
     params: { id: string };

@@ -10,7 +10,7 @@ export const PagesOuterWrapper = styled.div`
 export const HeaderOuterWrapper = styled.div`
   width: 100%;
   padding: 0 200px;
-  height: 80px;
+  height: 60px;
   border-bottom: 1px solid #eee;
 `;
 
@@ -18,12 +18,24 @@ export const HeaderInner = styled.div`
   height: 100%;
   display: flex;
   justify-content: space-between;
+  algin-items: center;
 `;
 export const HeaderLogoWrapper = styled.div`
   width: 200px;
   min-width: 200px;
   height: 100%;
+  display: flex;
   border: 1px solid #888;
+`;
+export const HeaderLogo = styled.div`
+  width: 60px;
+  height: 100%;
+  cursor: pointer;
+  border: 1px solid #888;
+`;
+export const HeaderSlogan = styled.div`
+  height: 60px;
+  line-height: 60px;
 `;
 export const HeaderNav = styled.div`
   width: 500px;

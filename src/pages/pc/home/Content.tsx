@@ -8,7 +8,7 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import { getDetailUrl } from "../../constants";
-import { ContentPropsType, ContentItemType } from "../../type";
+import { CommonHistoryType, ContentItemType } from "../../type";
 import { ContentItemWrappper } from "../../style";
 
 const mockData = [
@@ -18,7 +18,7 @@ const mockData = [
   { name: "条目四", detailId: 4 },
 ];
 
-const Content = (props: ContentPropsType) => {
+const Content = (props: CommonHistoryType) => {
   const {} = props;
 
   const [] = useState();
